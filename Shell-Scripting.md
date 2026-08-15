@@ -283,3 +283,61 @@ Jethalal  ubuntu
 
 # this Jethalal directory not formed  /home/jethalal not formed
 ```
+# Conditionals - if else elif
+- Direct Code Implementation
+```bash
+#!/bin/bash
+<< note
+1) Conditionals
+2) if block start then with, fi Block End 
+3) if<space>[[ $username == "shubham" ]]
+4) if[[ ]] #wrong , error face krna padega
+note
+
+read -p "Enter Your Name : " username
+
+if [[ $username == "shubham" ]];
+then
+        echo "username is right"
+else
+        echo "username is wrong"
+fi  
+```
+
+## Conditionals with Elif and (-ge -le -g -l)
+ ### Arithemetic Operators
+
+| Operator | Name           | Description                                       |  Example | Result |
+| :------: | -------------- | ------------------------------------------------- | :------: | :----: |
+|    `+`   | Addition       | Adds two values                                   |  `5 + 3` |   `8`  |
+|    `-`   | Subtraction    | Subtracts the second value from the first         |  `5 - 3` |   `2`  |
+|    `*`   | Multiplication | Multiplies two values                             |  `5 * 3` |  `15`  |
+|    `/`   | Division       | Divides the first value by the second             |  `6 / 3` |   `2`  |
+|    `%`   | Modulus        | Returns the remainder after division              |  `7 % 3` |   `1`  |
+|   `**`   | Exponentiation | Raises the first value to the power of the second | `2 ** 3` |   `8`  |
+
+```bash
+
+a=10
+b=3
+
+echo $((a + b))   # 13
+echo $((a - b))   # 7
+echo $((a * b))   # 30
+echo $((a / b))   # 3
+echo $((a % b))   # 1
+echo $((a ** b))  # 1000
+```
+
+### Comparison Operator
+
+| Operator | Meaning                  |  Example  | Result |
+| :------: | ------------------------ | :-------: | :----: |
+|   `-eq`  | Equal to                 | `5 -eq 5` | `true` |
+|   `-ne`  | Not equal to             | `5 -ne 3` | `true` |
+|   `-gt`  | Greater than             | `5 -gt 3` | `true` |
+|   `-lt`  | Less than                | `3 -lt 5` | `true` |
+|   `-ge`  | Greater than or equal to | `5 -ge 5` | `true` |
+|   `-le`  | Less than or equal to    | `5 -le 5` | `true` |
+
+
