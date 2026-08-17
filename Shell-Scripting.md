@@ -513,3 +513,34 @@ $((num + 1))      # ✅
 ```
 
 # Functions In Linux
+
+# Error Handling In Linux
+- In Other Languages for Handling Error there are keywords try and catch are available in Linux error handled by **if & else** <br>
+**- Example by code**
+
+```bash
+#!/bin/bash
+
+create_directory() {
+        mkdir demo
+}
+
+if ! create_directory; then  # => Here The create_directory call
+        echo "The code is being exited as the directory already exists"
+        exit 1
+fi
+echo "Directory create"
+```
+
+- **How Code Works**
+- **Create Directory is a function to create Directory call in if Statement if "! create_directory" means  any error occur in create Directory echo and exit 1 aage ka code execute nhi hoga ,, if directory create successfully then echo "Directory create"** 
+
+```bash
+#output for above code 
+ubuntu@ip-172-31-23-173:~/folder-3$ bash handleError.sh
+mkdir: demo: File exists
+The code is being exited as the directory already exists
+```
+- **ERROR** - Occured Because The directory already Exist so exit 1
+
+
