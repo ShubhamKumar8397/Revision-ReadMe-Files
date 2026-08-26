@@ -54,7 +54,8 @@ sudo usermod -aG docker rahul
 - -a → append the group; don't remove the user's existing groups
 - -G → specify the supplementary groups
 
- > [!WARNING] - user -aG Together
+> [!WARNING] 
+> use -aG Together
 
 `Refresh The Shell To use Without Docker` <br>
 sudo usermod -aG docker $USER, the operating system records the change, but your active terminal session does not know about it yet. Normally, you would have to log out completely or restart your SSH session to refresh your user permissions.
@@ -64,5 +65,35 @@ sudo usermod -aG docker $USER, the operating system records the change, but your
 ```bash
 newgrp docker
 ```
-> [!Note] <br>
->  To permanently apply the group across your entire environment so you never have to run newgrp again, make sure to log out of your desktop environment or disconnect your SSH session completely, then log back in
+> [!Note] 
+> To permanently apply the group across your entire environment so you never have to run newgrp again, make sure to log out of your desktop environment or disconnect your SSH session completely, then log back in
+
+
+
+
+
+
+
+
+
+> [!WARNING]
+> ### Refresh the Shell to Use Docker Without `sudo`
+>
+> After running:
+>
+> ```bash
+> sudo usermod -aG docker $USER
+> ```
+>
+> the operating system records the group membership change, but your active terminal session does not know about it yet.
+>
+> Normally, you would have to **log out completely** or **restart your SSH session** to refresh your user permissions.
+>
+> **Or**, use this command after adding the user to the Docker group:
+>
+> ```bash
+> newgrp docker
+> ```
+
+> [!NOTE]
+> To permanently apply the group membership across your entire environment, log out of your desktop environment or disconnect your SSH session completely, then log back in.
