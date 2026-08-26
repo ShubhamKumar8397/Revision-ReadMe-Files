@@ -54,3 +54,15 @@ file1.log  file2.json
 
 ### 5) ls -l 
 - It Use To list files and directories detailed information
+
+### 7) To Remover A user From Group 
+To Remove user Rahul from docker <br>
+`sudo gpasswd -d username groupname`
+```bash
+sudo gpasswd -d rahul docker
+```
+`sudo deluser username groupname`
+```
+sudo deluser ubuntu docker
+```
+Both Are Correct
