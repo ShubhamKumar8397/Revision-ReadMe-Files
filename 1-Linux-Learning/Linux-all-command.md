@@ -55,6 +55,24 @@ file1.log  file2.json
 ### 5) ls -l 
 - It Use To list files and directories detailed information
 
+### 6) df -h
+- Is Use To Retrieve The information about the disk space used available total and many more
+- -h means easily readable format in mb , gb
+```bash
+ubuntu@ip-172-31-23-173:~/folder-6/flask-app-ecs$ df -h
+
+Filesystem       Size  Used Avail Use% Mounted on
+/dev/root        6.7G  5.9G  770M  89% /
+tmpfs            455M     0  455M   0% /dev/shm
+tmpfs            182M  932K  181M   1% /run
+efivarfs         128K  3.3K  120K   3% /sys/firmware/efi/efivars
+tmpfs            455M     0  455M   0% /tmp
+none             1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+none             1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
+/dev/nvme0n1p13  989M  163M  760M  18% /boot
+/dev/nvme0n1p15  105M  6.3M   99M   7% /boot/efi
+```
+
 ### 6) To Add A Existing user In group
 usermodify - so wo last mein <br>
 `sudo usermod -aG GroupName username`
