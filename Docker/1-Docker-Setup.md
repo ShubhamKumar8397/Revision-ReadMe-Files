@@ -44,20 +44,23 @@ sudo systemctl stop docker
 ## Docker Commands More Infomation
 Docker are Root Level Commands<br>
 All Time in Every Docker Commands use **sudo**<br>
-`To Get Rid of sudo` <br>
-Add The Current User To Docker Group to use docker Commands Without Sudo
+
+<u>**To Get Rid of sudo**</u> <br>
+- Add The Current User To Docker Group to use docker Commands Without Sudo
 
 ```bash
 sudo usermod -aG docker rahul
 ```
-`What does -aG mean?` <br>
+- **usermod** -  usermod is a Linux command used to modify the properties of an existing user account, such as its groups, home directory, login shell, username, or other account settings. <br>
+
+<u> **What does -aG mean?**</u> <br>
 - -a → append the group; don't remove the user's existing groups
 - -G → specify the supplementary groups
 
 > [!WARNING] 
 > use -aG Together
 
-`Refresh The Shell To use Without Docker` <br>
+### Refresh The Shell To use Without Docker
 sudo usermod -aG docker $USER, the operating system records the change, but your active terminal session does not know about it yet. Normally, you would have to log out completely or restart your SSH session to refresh your user permissions.
 
 - Or Use This Command After Adding user To docker
@@ -76,24 +79,3 @@ newgrp docker
 
 
 
-> [!WARNING]
-> ### Refresh the Shell to Use Docker Without `sudo`
->
-> After running:
->
-> ```bash
-> sudo usermod -aG docker $USER
-> ```
->
-> the operating system records the group membership change, but your active terminal session does not know about it yet.
->
-> Normally, you would have to **log out completely** or **restart your SSH session** to refresh your user permissions.
->
-> **Or**, use this command after adding the user to the Docker group:
->
-> ```bash
-> newgrp docker
-> ```
-
-> [!NOTE]
-> To permanently apply the group membership across your entire environment, log out of your desktop environment or disconnect your SSH session completely, then log back in.

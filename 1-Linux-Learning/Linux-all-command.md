@@ -55,7 +55,23 @@ file1.log  file2.json
 ### 5) ls -l 
 - It Use To list files and directories detailed information
 
+### 6) To Add A Existing user In group
+usermodify - so wo last mein <br>
+`sudo usermod -aG GroupName username`
+```bash
+sudo usermod -aG docker $USER
+sudo usermod -aG docker ubuntu
+```
+> [!TIP]
+> $User - Is A Environment Variable in Linux This can return The current working user
+
+> [!IMPORTANT]
+> <u> **What does -aG mean?**</u>
+> - -a → append the group; don't remove the user's existing groups
+> - -G → specify the supplementary groups
+
 ### 7) To Remover A user From Group 
+gpasswd - group modification - so groupname last mein <br>
 To Remove user Rahul from docker <br>
 `sudo gpasswd -d username groupname`
 ```bash
@@ -66,3 +82,14 @@ sudo gpasswd -d rahul docker
 sudo deluser ubuntu docker
 ```
 Both Are Correct
+
+```text
+sudo       gpasswd       -d       rahul       docker
+ │            │            │          │            │
+ │            │            │          │            └── Group name
+ │            │            │          └────────────── User name
+ │            │            └───────────────────────── Delete/remove
+ │            └────────────────────────────────────── Manage group membership
+ └─────────────────────────────────────────────────── Run with administrator privileges
+ ``` 
+
