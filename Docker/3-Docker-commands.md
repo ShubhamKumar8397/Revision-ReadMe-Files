@@ -1,10 +1,10 @@
 # Docker Commands
-### 1) docker login
+## 1) docker login
 - docker login in linux cli
 - To Login In the Docker By PAT or username and password
-### 2) docker images
+## 2) docker images
 - To Show All The Images have This Account 
-### 3) docker build -t imageName contextpath
+## 3) docker build -t imageName contextpath
 ```bash
 docker build -t flask-app .
 
@@ -22,7 +22,7 @@ docker build -t flask-app .
 └── Build Docker image
  ```
 
-### 4) docker run -d -p hostPort:containerPort imageName
+## 4) docker run -d -p hostPort:containerPort imageName
 - -d detached mod per chalane se terminal stuck nhi hoga and you can running the app in background do their work easily on the flow
 ```
 docker
@@ -63,7 +63,65 @@ Internet│      :80          │
 ```
 - **When someone accesses port 80 on my EC2, forward that traffic to port 5000 inside the container**.
 
-### 5) docker ps
+## 5) docker ps
 - show all The running container 
-### 4) docker logs containerId
+## 6) docker logs containerId
 - get all the logs for the specific containers
+
+## 7) docker ps -a 
+- This show The all Containers details Thats Running , stops with time 
+- sometimes a container is run and immedietly stop so we run this command and know the container why it existed by taking its container id and 
+- docker logs Container-Id-Of-Existed-Contaier
+
+## 8) Give Name To Container During Run
+- --name is use to give name to container during run
+```
+docker run -d --name containerName nginx
+```
+
+## 9) docker network ls
+```bash
+docker network ls
+```
+- This Shows All the predefined networks and All The custom Network 
+```bash
+ubuntu@ip-172-31-23-173:~$ docker network ls
+NETWORK ID     NAME        DRIVER    SCOPE
+b8f3c68c24ca   bridge      bridge    local
+1850120981d3   host        host      local
+5012cc06d58f   myNetwork   bridge    local
+2ee2ba4ef381   none        null      local
+2560dd82c5eb   two-tier    bridge    local
+```
+
+## 10) docker Netowork create < Network-Name >
+- To Create The Custom Network
+```bash
+docker network create mynetwork
+                          └──------------ Network -Name
+```
+
+## 11) docker network inspect < Network-Name >
+```bash
+docker network inspect two-tier
+```
+- Get the details about the network 
+- Which container is under this network
+
+## 12) docker inspect < container id>
+- to get the details about the container , existed , running with exit code or more details in cleaner way
+
+## 13) docker exec -it < container Id > bash
+- To run the container in interactive terminal 
+
+```bash
+docker exec -it 2dfajlej232d bash
+
+# now you inside the bash shell and login to mysql
+mysql -u root -p
+# enter password: root
+
+# now run sql commands
+SHOW DATABASES;
+SELECT user, host FROM mysql.user;
+```
